@@ -187,6 +187,7 @@ unicom.rewrite = function () {
     }
 }
 
+// 保存下当前组件或者page实例对象
 unicom.$vm = unicom;
 
 module.exports = unicom
