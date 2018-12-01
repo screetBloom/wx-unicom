@@ -12,7 +12,6 @@ var indexStart = parseInt(String(new Date().getTime()).slice(-6));
 var compons = {};
 var componsUnicom = {};
 
-
 // 是否已经被重写
 var isRewrite = false;
 
