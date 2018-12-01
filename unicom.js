@@ -49,6 +49,7 @@ function sendData() {
     var args = Array.prototype.slice.call(arguments);
     var to = args.shift();
     var ids = "";
+    // s0: 匹配到的字符串  s1：第n个括号表达式匹配的值 // 返回值会替换掉匹配到的串
     var to = to.replace(/#([\w,]+)$/, function (s0, s1) {
         ids = s1;
         return "";
@@ -131,9 +132,11 @@ function getBehavior() {
             componsUnicom[_id] = defFields.unicom;
         },
         lifetimes: {
+            // 在组件实例进入页面节点树时执行
             attached: function () {
                 id = initCompon(this, this.properties.unicomId, _id);
             },
+            // 组件生命周期函数，在组件实例被从页面节点树移除时执行
             detached: function () {
                 delete compons[id];
                 delete componsUnicom[_id];
